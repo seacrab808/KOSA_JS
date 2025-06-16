@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form값 핸들링</title>
+    <script>
+        // 1. 폼에 입력된 값을 받아서 브라우저 특정 영역에 출력  ... alert 창으로 출력...
+        function showName() {
+            const nick = document.getElementById('nick').value;
+            alert("닉네임 : " + nick);
+            document.getElementById('nick').value = '';
+            document.getElementById('hobby').focus();
+        }
+
+        function showHobby() {
+            // const hobby = document.getElementById('hobby').value;
+            // alert("취미 : " + hobby)
+            // document.getElementById('hobby').value = '';
+            // document.getElementById('nick').focus();
+
+            let hobby = document.frm.hobby.value;
+            alert("취미 : " + hobby);
+
+            document.frm.hobby.value ="";
+            document.frm.nick.focus();
+        }
+
+    </script>
 </head>
 <body>
-    <h2>form event handling</h2>
+    <h2>Form event handling</h2>
+    <form action="FS" name="frm">
+        닉네임 <input type="text" name="nick" id="nick" /> 
+        <input type="button" value="닉네임보기" onclick="showName()" />
+        <br />
+        <br />
+
+        취미 <input type="text" name="hobby" id="hobby" /> 
+        <input type="button" value="취미보기" onclick="showHobby()" />
+
+
+    </form>
 </body>
 </html>
