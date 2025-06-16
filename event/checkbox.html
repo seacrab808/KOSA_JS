@@ -30,20 +30,18 @@
             // 3. alert 창 한 번만 뜨고 선택한 메뉴가 한 창에 다 나오도록
             // 만약에 메뉴가 하나도 없다면 메뉴선택 메시지
             let str = [];
-            let noValue = false;
 
             for(let i = 0; i < menu.length; i++) {
                 if(menu[i].checked) {
                 str.push(menu[i].value);
-                noValue = false;
                 }
             }
 
-            if (str.length === 0) {
+            if (str.length === 0) 
                 alert("하나 이상의 메뉴는 꼭 선택 바랍니다.")
-            } else {
+            else 
                 alert("당신이 선택한 메뉴는 " + str.join(" ") + "입니다. ")
-            }
+            
 
         }
     </script>

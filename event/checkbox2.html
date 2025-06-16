@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach() 사용법</title>
+    <script>
+        function chioceMenu() {
+            // checkBox form까지..
+            let menus = document.frm.menu;
+          
+            let str = "";
+
+            menus.forEach(menu => {
+                if(menu.checked) str += menu.value + " ";
+                menu.checked = false;
+            });
+
+            if(str="") alert("하나 이상의 메뉴는 선택바랍니다.")
+            else alert("당신이 선택한 메뉴는 " + str + "입니다.")
+            
+
+        }
+    </script>
+</head>
+<body>
+    <h2>Checkbox Form</h2>
+    <form action="#" name="frm">
+        <strong><h3>내일 점심 메뉴</h3></strong>
+        <input type="checkbox" name="menu" value="김치찌개" /> 김치찌개
+        <br />
+        <input type="checkbox" name="menu" value="왕돈까스" /> 왕돈까스
+        <br />
+        <input type="checkbox" name="menu" value="인도카레" /> 인도카레
+        <br />
+        <input type="checkbox" name="menu" value="비빔밥" /> 비빔밥
+        <br />
+        <br />
+        <input type="button" value="메뉴선택" onclick="chioceMenu()" />
+    </form>
+</body>
+</html>

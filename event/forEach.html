@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach() 사용법</title>
+    <script>
+        function chioceMenu() {
+            let str = "";
+            document.querySelectorAll(".menu").forEach((item) => {
+              if(item.checked) str += item.value + " ";
+              item.checked = false;
+            });
+      
+            if(str == "") alert("하나 이상의 메뉴를 선택해주세요.");
+            else alert("당신이 선택한 메뉴는 " + str);
+        }
+
+        // const onload = () => {
+        //     document.querySelectorAll("menus").forEach(() => {
+        //         item.onclick = () => {
+        //             this.closest('.main-menu').attribute['id'].value;
+        //             alert(id);
+        //         }
+        //     });
+        // }
+
+    </script>
+</head>
+<body>
+    <h2>Checkbox Form</h2>
+    <form action="#" name="frm">
+        <div class="main-menu" id="lunch">
+            <strong><h3>내일 점심 메뉴</h3></strong>
+            <input type="checkbox" name="menu" class="menu" value="김치찌개" /> 김치찌개
+            <br />
+            <input type="checkbox" name="menu" value="왕돈까스" class="menu" /> 왕돈까스
+            <br />
+            <input type="checkbox" name="menu" value="인도카레" class="menu" /> 인도카레
+            <br />
+            <input type="checkbox" name="menu" value="비빔밥" class="menu" /> 비빔밥
+            <br />
+            <br />
+            <input type="button" value="메뉴선택" onclick="chioceMenu()" />
+
+            <button class="menus">Lunch choice</button>
+        </div>
+
+        <div class="main-menu" id="dinner">
+            <strong><h3>내일 저녁 메뉴</h3></strong>
+            <input type="checkbox" name="menu" value="김치찌개" class="menu" /> 김치찌개
+            <br />
+            <input type="checkbox" name="menu" value="왕돈까스" class="menu" /> 왕돈까스
+            <br />
+            <input type="checkbox" name="menu" value="인도카레" class="menu" /> 인도카레
+            <br />
+            <input type="checkbox" name="menu" value="비빔밥" class="menu" /> 비빔밥
+            <br />
+            <br />
+            <input type="button" value="메뉴선택" onclick="chioceMenu()" />
+
+            <button class="menus">Dinner choice</button>
+        </div>
+    </form>
+</body>
+</html>
