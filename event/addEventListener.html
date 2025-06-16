@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript란?</h1>
+    <p id="content">Javascript is the world's most popular...</p>
+    <button>CLICK</button>
+</body>
+<script>
+   let btn = document.querySelector('button');
+   btn.addEventListener('click', () => {
+    let content = document.querySelector("#content");
+    content.innerHTML = "<h3><font color='crimson'>Hello Javascript~~</font></h3>"
+   });
+</script>
+</html>

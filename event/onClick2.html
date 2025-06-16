@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript란?</h1>
+    <p id="content">Javascript is the world's most popular...</p>
+    <button>CLICK</button>
+</body>
+<script>
+    // 1. button을 클릭하면 자바스크립트 함수로 바로 연결되도록
+    document.querySelector('button').onclick = push;
+
+ function push(){
+            // 1. content 영역을 받아와서(querySelector)
+            let content = document.querySelector("#content");
+    
+            // 2.1번의 영역이 Hello Javascript 내용으로 변경되도록 한다
+            // 이 때 글자색은 crimson
+            content.innerHTML = "<h3><font color='crimson'>Hello Javascript~~</font></h3>"
+        }
+</script>
+</html>
