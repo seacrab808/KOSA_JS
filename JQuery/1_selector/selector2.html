@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(() => {
+        $('button').click(() => {
+            $('h2, p').css('color', 'blue');
+            $('p:eq(0)').html("첫 번째 문장입니다.");
+            $('button').css('display', 'none')
+        });
+        
+        let person = $('input[name=한국]').val;
+        alert(person);
+
+        $('input[name*=한국]').css('background', 'yellow');
+
+
+      });
+    </script>
+</head>
+<body>
+    <h2 id="header">
+        <span>This is a heading</span>
+    </h2>
+
+    <input name="한국" value="한국사람">
+
+</body>
+</html>

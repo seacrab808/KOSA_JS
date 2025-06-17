@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // 폼이 제출될 때 이벤트 발생
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+
+                let name = $('input[name=name]').val(); 
+
+                $('#result')
+                  .html(`<h3>입력된 고객 이름은 ${name}입니다.</h3>`)
+                  .css('color', 'blue');
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="" method="get">
+        <input type="text" name="name" />
+        <input type="submit" />
+    </form>
+</body>
+</html>
