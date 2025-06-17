@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+           $('button').click(function() {
+            let text1 = "<p>This is a Text...</p>";
+            let text2 = $('p').html();
+            let text3 = document.createElement('p');
+            text3.innerHTML = 'This is a Text3..';
+            // // p 태그 위 내용을 부착
+            // $('p').append(text1);
+
+            // text1, 2, 3을 body에 부착
+            $('body').append(text1, text2, text3);
+
+           });
+        });
+    </script>
+</head>
+<body>
+    <p>This is a paragraph</p>
+    <button>Append text</button>
+</body>
+</html>
