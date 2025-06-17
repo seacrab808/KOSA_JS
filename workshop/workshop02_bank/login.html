@@ -54,8 +54,33 @@
   </style>
   <script type="text/javascript">
   	function btn(){
-  		 location.href = "/ws02_front/index.html";
+  		 location.href = "./index.html";
   	}
+
+    function login() {
+      const emailValue = document.getElementById('email');
+      const passValue = document.getElementById('password');
+     
+
+      if(emailValue.value == "" || passValue.value == "") {
+        alert("모든 정보를 입력해주세요.")
+    
+        // 비밀번호 값이 비었을 때 focus
+        if(emailValue.value == "") emailValue.focus();
+        else if(passValue.value == "") passValue.focus();
+        else emailValue.focus();
+        // 이메일 값이 비거나 둘 다 비었을 때
+      } else { // 값이 둘 다 있다면
+        // 제출 실행 X
+        alert("모든 정보 입력 완료!");
+      }
+    }
+    window.onload = function() {
+    document.querySelector('form').addEventListener("submit", (e) => {
+        e.preventDefault();
+        e.target();
+        });
+      };
   </script>
   <title>IT's KB - login</title>
 </head>
@@ -63,17 +88,17 @@
   <div id="container">
     <nav>
       <ul>
-        <li class="nav-item logo"><img src="logo.jpg" alt=""></li>
-        <li class="nav-item"><a href="personal.html">개인</a></li>
-        <li class="nav-item"><a href="business.html">기업</a></li>
-        <li class="nav-item"><a href="login.html">로그인</a></li>
-        <li class="nav-item"><a href="register.html">회원가입</a></li>
+        <li class="nav-item logo"><a href="./index.html"><img src="logo.jpg" alt=""></a></li>
+        <li class="nav-item"><a href="./personal.html">개인</a></li>
+        <li class="nav-item"><a href="./business.html">기업</a></li>
+        <li class="nav-item"><a href="./login.html">로그인</a></li>
+        <li class="nav-item"><a href="./register.html">회원가입</a></li>
       </ul>
     </nav>
     <div id="banner">지금 당신의 행복! IT's KB Life!</div>
     <div id="login">
       <h1>Login</h1>
-      <form action="">
+      <form action="page">
         <div class="form-item">
           <label for="email">이메일</label>
 		      <input type="text" id="email">
@@ -83,9 +108,9 @@
 		      <input type="password" id="password">
         </div>
         <hr>
-        <button>로그인</button>
+        <button onclick="login()">로그인</button>
         
-        <button type="button" onclick="btn()">홈</button>
+        <button onclick="btn()">홈</button>
       </form>
     </div>
 

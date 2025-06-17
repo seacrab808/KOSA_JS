@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(() => {
+            // 1. id값이 header인 태그의 직계 자식인 span 태그를 선택자로 지정
+            $('#header > span').css('color', 'crimson').html("query selector test");
+
+            // 2. h2 태그의 자식인 span을 선택자로.. 배경색을 gray
+            $('h2 span').css('background', 'gray');
+
+            // 3. 첫번째 p 태그를 지정... 내용을 첫번째 문장입니다 로 변경
+            $('p:first').html("첫번째 문장입니다.");
+            $('p:eq(1)').html("두번째 문장입니다.");
+            $('p').last().html("마지막 문장입니다.");
+
+            // 4. 버튼이 보이지 않도록
+            $('button').css('display', 'none');
+
+            // 5. p태그와 h2 태그 모두 선택자로 지정... 글자 가운데 정렬
+            $('p, h2').css('text-align', 'center');
+        });
+    </script>
+</head>
+<body>
+    <h2 id="header">
+        <span>This is a heading</span>
+    </h2>
+
+    <p>This is a paragraph</p>
+    <p class="content">This is another paragraph1.</p>
+    <p class="content theme">This is another paragraph2.</p>
+    <button>버튼</button>
+</body>
+</html>
