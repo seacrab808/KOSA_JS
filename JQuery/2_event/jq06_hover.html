@@ -8,8 +8,14 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+	
 	$(function(){  
-
+		$('h2').hover(function() {
+			$(this).addClass('reverse');
+		}, function() {
+			$(this).removeClass('reverse');
+		}
+		);
 	});//ready
 </script>
 </head>
