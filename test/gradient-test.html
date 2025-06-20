@@ -2,29 +2,43 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>다중색 움직이는 그라디언트</title>
+  <title>3색 Y자 그라디언트 회전 배경</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       height: 100vh;
-      background: linear-gradient(120deg, #89bfff, #F7E8DD, #FEFEC7);
-      background-size: 200% 200%;
-      animation: moveGradient 8s linear infinite;
+      overflow: hidden;
+      font-family: sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: sans-serif;
-      font-size: 2rem;
+      color: black;
     }
 
-    @keyframes moveGradient {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+    .gradient-bg {
+      position: absolute;
+      width: 200vmax;
+      height: 200vmax;
+      background: conic-gradient(
+        #ffc5bb 0deg 120deg,
+        #feffda 120deg 240deg,
+        #d0f0ff 240deg 360deg
+      );
+      animation: spin 20s linear infinite;
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(200px);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  🎨 3색이 흐르는 움직이는 배경입니다
+  <!-- 그라디언트 -->
+  <div class="gradient-bg"></div>
 </body>
 </html>
