@@ -48,13 +48,35 @@ html, body {
 
 .page2 {
   
-  background: #fff;
+  background: #FBF7F1;
   border-radius: 40px 40px 0 0;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
 
   h2 {
     margin-top: 100px;
     
+  }
+}
+
+.vertical-text {
+  writing-mode: vertical-rl; 
+  text-orientation:sideways;  
+  font-size: 4rem;
+  font-weight: bold;
+  color: #675944;
+  animation: dropIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* ✅ 위에서 아래로 떨어지는 애니메이션 */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -73,8 +95,11 @@ html, body {
     </div>
 
     <div class="container page2">
-      <h2>나만의 여행 일정</h2>
-      <p>파리 게스트하우스를 예약해보세요</p>
+
+      <div class="vertical-text">Guest</div>
+      <div></div>
+      <div class="vertical-text ver.2">house</div>
+
     </div>
   </section>
 
