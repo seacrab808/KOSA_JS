@@ -10,7 +10,48 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(function() {
-	
+	let total = 0;
+
+	for(let i=0; i < localStorage.length; i++){
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		var [name, img, price] = value.split(",");
+
+		total += parseInt(price);
+
+		updateTotal()
+
+		let config = `<tr data-key='${key}''>
+					 	<td><img src='${img}'></td>
+						<td>${key}</td>
+						<td>${name}</td>
+						<td>${price}</td>
+						<td><button class="delBtn">삭제</button></td>
+					 </tr>`;
+		
+		$("#content").append(config);
+	}
+
+
+	updateTotal()
+
+	$('#content').on("click",".delBtn", function(){
+		let $tr = $(this).closest("tr");
+		let key = $tr.data("key");
+		let value = localStorage.getItem(key);
+		let [name, img, price] = value.split(",");
+
+		localStorage.removeItem(key);
+		$(this).closest("tr").remove();
+
+		total -= parseInt(price);
+
+		updateTotal()
+	})
+
+		function updateTotal(){
+		$("#price").html(`총 가격은 : ${total}`);
+	}
 	
 });
 </script>

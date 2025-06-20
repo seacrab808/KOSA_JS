@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>다중색 움직이는 그라디언트</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(120deg, #89bfff, #F7E8DD, #FEFEC7);
+      background-size: 200% 200%;
+      animation: moveGradient 8s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      font-size: 2rem;
+    }
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+  </style>
+</head>
+<body>
+  🎨 3색이 흐르는 움직이는 배경입니다
+</body>
+</html>

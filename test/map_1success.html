@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>대한민국 예약 지도</title>
+
+  <!-- ✅ 정상 동작하는 CSS (v1.2.2) -->
+  <link href="https://cdn.jsdelivr.net/npm/jvectormap@1.2.2/jquery-jvectormap.css" rel="stylesheet">
+
+  <style>
+    #map {
+      width: 800px;
+      height: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+    }
+    #info {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+  <div id="info">시/도를 클릭하면 예약 수를 확인할 수 있습니다.</div>
+
+  <!-- ✅ 1. jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- ✅ 2. jVectorMap Core (반드시 있어야 함!) -->
+  <script src="https://cdn.jsdelivr.net/npm/jvectormap@1.2.2/jquery-jvectormap.min.js"></script>
+
+  <!-- ✅ 3. 대한민국 지도 데이터 -->
+  <script src="./maps/jquery-jvectormap-kr-mill.js"></script>
+
+  <script>
+    const reservationData = {
+      "KR-11": 120, "KR-26": 55, "KR-27": 34, "KR-28": 67,
+      "KR-29": 29, "KR-30": 41, "KR-31": 18, "KR-41": 88,
+      "KR-42": 42, "KR-43": 31, "KR-44": 27, "KR-45": 37,
+      "KR-46": 49, "KR-47": 20, "KR-48": 33, "KR-49": 15,
+      "KR-50": 12
+    };
+
+    $(function() {
+      $('#map').vectorMap({
+        map: 'kr_mill',
+        backgroundColor: '#e0f7fa',
+        regionStyle: {
+          initial: { fill: '#AED6F1' },
+          selected: { fill: '#FF7043' },
+          hover: { fill: '#5DADE2' }
+        },
+        onRegionClick: function(event, code) {
+          const name = $('#map').vectorMap('get', 'mapObject').getRegionName(code);
+          const count = reservationData[code] || 0;
+          $('#info').text(`${name} 예약 수: ${count}건`);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
